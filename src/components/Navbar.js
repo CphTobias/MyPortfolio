@@ -52,6 +52,10 @@ export const Navbar = ({ color }) => {
 
   const findCorrectNavbar = () => {
     if (!isMobile) {
+      if(showMobileLinks) {
+        document.body.style.overflow = ""
+      }
+
       return (
           <div className="container">
             <div className="row">
@@ -70,6 +74,10 @@ export const Navbar = ({ color }) => {
           </div>
       );
     } else {
+      if(showMobileLinks) {
+        document.body.style.overflow = "hidden"
+      }
+
       return (
           <div className="container">
             <div className="row">
