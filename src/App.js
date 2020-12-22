@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./css/Styles.css";
+import { Header } from "./components/Header";
+import { ColorChooser } from "./components/ColorChooser";
+import { Navbar } from "./components/Navbar";
 
-function App() {
+export default function App() {
+
+  const [ color, setColor ] = useState("yellow");
+
+  const handleColorPick = (newcolor) => {
+    setColor(newcolor)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Navbar handleColorPick={handleColorPick} color={color}/>
+        <ColorChooser handleColorPick={handleColorPick}/>
+        <main className="mainContainer container">
+          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
+            <Header size="h1" color={color} title="Program is working!"/>
+            <Header size="h5" color={color} title="Program is working!"/>
+            <p className={"text-color-"+color}>Something</p>
+          </div>
+          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
+            <Header size="h1" color={color} title="Program is working!"/>
+            <Header size="h5" color={color} title="Program is working!"/>
+            <p className={"text-color-"+color}>Something</p>
+          </div>
+          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
+            <Header size="h1" color={color} title="Program is working!"/>
+            <Header size="h5" color={color} title="Program is working!"/>
+            <p className={"text-color-"+color}>Something</p>
+          </div>
+          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
+            <Header size="h1" color={color} title="Program is working!"/>
+            <Header size="h5" color={color} title="Program is working!"/>
+            <p className={"text-color-"+color}>Something</p>
+          </div>
+          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
+            <Header size="h1" color={color} title="Program is working!"/>
+            <Header size="h5" color={color} title="Program is working!"/>
+            <p className={"text-color-"+color}>Something</p>
+          </div>
+        </main>
+      </>
   );
 }
 
-export default App;

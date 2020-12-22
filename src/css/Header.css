@@ -1,0 +1,13 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #181818;
+  font-weight: 500;
+}
+
+.default-header-yellow {
+  padding: 10px;
+}
+
+.default-header-white {
+  padding: 10px;
+}
+

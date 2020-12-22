@@ -1,0 +1,59 @@
+@import "Header.css";
+@import "Container.css";
+@import "Navbar.css";
+@import "ColorChooser.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  margin-top: 40px;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(217, 198, 112, 1) 0%, rgba(255, 223, 0, 1) 41%, rgba(204, 185, 99, 1) 100%);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.text-color-white {
+  color: #292929;
+}
+
+.text-color-yellow {
+  color: #ae5c5c;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.scale:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}

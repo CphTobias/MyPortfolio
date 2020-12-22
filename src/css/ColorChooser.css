@@ -1,0 +1,13 @@
+.white-color-choice {
+  border: 1px solid black;
+  border-radius: 30px;
+  color: lightgrey;
+  margin-left: 10px;
+}
+
+.yellow-color-choice {
+  color: yellow;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin-left: 10px;
+}
