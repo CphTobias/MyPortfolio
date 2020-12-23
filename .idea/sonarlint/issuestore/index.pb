@@ -24,3 +24,5 @@ N
 src/components/ColorChooser.js,e/8/e80643545c3708fcbf0281fa03100858d3de5afc
 E
 src/css/Container.css,5/b/5b0dae2ef73fd1b593766c6733022637c1410ca5
+H
+src/css/ColorChooser.css,f/5/f59bc760932decc4c8b2fd8fd57c029737558a39

@@ -1,49 +1,59 @@
 import React, { useState } from "react";
 import "./css/Styles.css";
-import { Header } from "./components/Header";
-import { ColorChooser } from "./components/ColorChooser";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Home } from "./routes/Home";
+import { About } from "./routes/About";
 import { Navbar } from "./components/Navbar";
+import { ColorChooser } from "./components/ColorChooser";
+import { Contact } from "./routes/Contact";
 
 export default function App() {
-
-  const [ color, setColor ] = useState("yellow");
+  const [color, setColor] = useState("yellow");
 
   const handleColorPick = (newcolor) => {
-    setColor(newcolor)
-  }
+    setColor(newcolor);
+  };
 
   return (
-      <>
-        <Navbar handleColorPick={handleColorPick} color={color}/>
-        <ColorChooser handleColorPick={handleColorPick}/>
-        <main className="mainContainer container">
-          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
-            <Header size="h1" color={color} title="Program is working!"/>
-            <Header size="h5" color={color} title="Program is working!"/>
-            <p className={"text-color-"+color}>Something</p>
-          </div>
-          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
-            <Header size="h1" color={color} title="Program is working!"/>
-            <Header size="h5" color={color} title="Program is working!"/>
-            <p className={"text-color-"+color}>Something</p>
-          </div>
-          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
-            <Header size="h1" color={color} title="Program is working!"/>
-            <Header size="h5" color={color} title="Program is working!"/>
-            <p className={"text-color-"+color}>Something</p>
-          </div>
-          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
-            <Header size="h1" color={color} title="Program is working!"/>
-            <Header size="h5" color={color} title="Program is working!"/>
-            <p className={"text-color-"+color}>Something</p>
-          </div>
-          <div className={color === "yellow" ? "shadow-container-yellow" : "shadow-container-white"}>
-            <Header size="h1" color={color} title="Program is working!"/>
-            <Header size="h5" color={color} title="Program is working!"/>
-            <p className={"text-color-"+color}>Something</p>
-          </div>
-        </main>
-      </>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <div>
+                <Navbar handleColorPick={handleColorPick} color={color} />
+                <ColorChooser handleColorPick={handleColorPick} />
+                <Home color={color} />
+              </div>
+            )}
+          />
+          <Route
+            path="/about"
+            exact
+            render={() => (
+              <div>
+                <Navbar handleColorPick={handleColorPick} color={color} />
+                <ColorChooser handleColorPick={handleColorPick} />
+                <About />
+              </div>
+            )}
+          />
+          <Route
+            path="/contact"
+            exact
+            render={() => (
+              <div>
+                <Navbar handleColorPick={handleColorPick} color={color} />
+                <ColorChooser handleColorPick={handleColorPick} />
+                <Contact />
+              </div>
+            )}
+          />
+          <Route path="/" render={() => <div>404</div>} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
-

@@ -21,8 +21,8 @@ export const ColorChooser = ({ handleColorPick }) => {
       <>
         <div className={"colorchooser-container-"+newcolor}>
           <div className="container">
-            <i onClick={() => handleClick("yellow")} className="yellow-color-choice pointer fas fa-circle fa-2x navbar-li"></i>
             <i onClick={() => handleClick("white")} className="white-color-choice pointer fas fa-circle fa-2x navbar-li"></i>
+            <i onClick={() => handleClick("yellow")} className="yellow-color-choice pointer fas fa-circle fa-2x navbar-li"></i>
             <ul>
               <li className="navbar-li">
                 <Header title={"Choose theme"} size={"h3"}/>
