@@ -4,6 +4,7 @@
   padding: 13px;
   width: 100%;
   top: 0;
+  z-index: 100;
 }
 
 .navbar-container-white {
@@ -12,11 +13,12 @@
   padding: 13px;
   width: 100%;
   top: 0;
+  z-index: 100;
 }
 
 .navbar-li {
   display: flex;
-  float:right;
+  float: right;
 }
 
 .navbar-link-yellow {
@@ -39,6 +41,14 @@
   left: 35%;
 }
 
+.navbar-mainlink {
+  padding: 10px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #292929;
+  font-weight: 600;
+}
+
 .navbar-mobile-link-white {
   text-decoration: none;
   font-size: 40px;
@@ -52,21 +62,9 @@
 }
 
 .navbar-fullscreenmobile-white {
-  height: 0;
-  width: 100%;
-  background-color: rgba(169, 169, 169, 1);
-  top: 100%;
-  -webkit-transition: 1s;
-  position: fixed;
-}
-
-
-.navbar-fullscreenmobile-white {
   height: 100vh;
   width: 100%;
   background-color: rgba(169, 169, 169, 1);
-  transition-duration: 4s;
-  transition-delay: 2s;
 }
 
 .navbar-fullscreenmobile-yellow {

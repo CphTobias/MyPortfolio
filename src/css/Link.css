@@ -1,0 +1,29 @@
+.dirlink-white {
+  color: black;
+  display: flex;
+  float: left;
+  margin-right: 8px;
+  text-decoration: none;
+}
+
+.dirlink-yellow {
+  color: dimgrey;
+  display: flex;
+  float: left;
+  margin-right: 8px;
+  text-decoration: none;
+}
+
+.website-link-white {
+  color: rgb(91, 85, 95);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.website-link-yellow {
+  color: rgb(91, 85, 95);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}

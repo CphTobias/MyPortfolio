@@ -2,11 +2,12 @@
 @import "Container.css";
 @import "Navbar.css";
 @import "ColorChooser.css";
+@import "Link.css";
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -15,7 +16,12 @@ main {
 }
 
 body {
-  background: linear-gradient(90deg, rgba(217, 198, 112, 1) 0%, rgba(255, 223, 0, 1) 41%, rgba(204, 185, 99, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(217, 198, 112, 1) 0%,
+    rgba(255, 223, 0, 1) 41%,
+    rgba(204, 185, 99, 1) 100%
+  );
 }
 
 ul {
@@ -23,10 +29,14 @@ ul {
 }
 
 .text-color-white {
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #292929;
 }
 
 .text-color-yellow {
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #ae5c5c;
 }
 

@@ -68,16 +68,22 @@ export const Navbar = ({ color }) => {
       return (
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-10">
               <ul>
                 <li>
-                  <Link className={"navbar-link-" + color} to="/">
-                    Tobias portifolie
+                  <i
+                    onClick={() => {
+                      history.push("/");
+                    }}
+                    class="fas fa-file-contract fa-2x pointer"
+                  ></i>
+                  <Link className="navbar-mainlink" to={"/"}>
+                    Portfolio
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="col">
+            <div className="col-2">
               <div className="navbar-mobilecontainer">
                 <i
                   onClick={handleMobileLinks}
@@ -103,8 +109,14 @@ export const Navbar = ({ color }) => {
             <div className="col-md-6">
               <ul>
                 <li>
-                  <Link to="/" className={"navbar-link-" + color}>
-                    Tobias portfolie
+                  <i
+                    onClick={() => {
+                      history.push("/");
+                    }}
+                    class="fas fa-file-contract fa-2x pointer"
+                  ></i>
+                  <Link className="navbar-mainlink" to={"/"}>
+                    Portfolio
                   </Link>
                 </li>
               </ul>

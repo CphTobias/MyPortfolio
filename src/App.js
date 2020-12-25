@@ -6,6 +6,8 @@ import { About } from "./routes/About";
 import { Navbar } from "./components/Navbar";
 import { ColorChooser } from "./components/ColorChooser";
 import { Contact } from "./routes/Contact";
+import { CurrentDirLinks } from "./components/CurrentDirLinks";
+import { Fog } from "./routes/home/Fog";
 
 export default function App() {
   const [color, setColor] = useState("yellow");
@@ -24,8 +26,29 @@ export default function App() {
             render={() => (
               <div>
                 <Navbar handleColorPick={handleColorPick} color={color} />
-                <ColorChooser handleColorPick={handleColorPick} />
-                <Home color={color} />
+                <ColorChooser
+                  handleColorPick={handleColorPick}
+                  currentDirLinks={
+                    <CurrentDirLinks links={[""]} color={color} />
+                  }
+                />
+                <Home color={color} handleColorPick={handleColorPick} />
+              </div>
+            )}
+          />
+          <Route
+            path="/fog"
+            exact
+            render={() => (
+              <div>
+                <Navbar handleColorPick={handleColorPick} color={color} />
+                <ColorChooser
+                  handleColorPick={handleColorPick}
+                  currentDirLinks={
+                    <CurrentDirLinks links={["", "fog"]} color={color} />
+                  }
+                />
+                <Fog color={color} />
               </div>
             )}
           />
@@ -35,8 +58,13 @@ export default function App() {
             render={() => (
               <div>
                 <Navbar handleColorPick={handleColorPick} color={color} />
-                <ColorChooser handleColorPick={handleColorPick} />
-                <About />
+                <ColorChooser
+                  handleColorPick={handleColorPick}
+                  currentDirLinks={
+                    <CurrentDirLinks links={["about"]} color={color} />
+                  }
+                />
+                <About color={color} />
               </div>
             )}
           />
@@ -46,8 +74,13 @@ export default function App() {
             render={() => (
               <div>
                 <Navbar handleColorPick={handleColorPick} color={color} />
-                <ColorChooser handleColorPick={handleColorPick} />
-                <Contact />
+                <ColorChooser
+                  handleColorPick={handleColorPick}
+                  currentDirLinks={
+                    <CurrentDirLinks links={["contact"]} color={color} />
+                  }
+                />
+                <Contact color={color} />
               </div>
             )}
           />
