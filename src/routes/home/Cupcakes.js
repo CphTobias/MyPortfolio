@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-export const Cupcakes = ({ color }) => {
+export const Cupcakes = (props) => {
+  const color = props.color;
+
   return (
     <div>
       <main className="mainContainer container">
