@@ -1,7 +1,12 @@
 import React from "react";
 import { DirLink } from "./DirLink";
 
-export const CurrentDirLinks = ({ links, color }) => {
+interface Props {
+  links: string[];
+  color: string;
+}
+
+export const CurrentDirLinks: React.FC<Props> = ({ links, color }) => {
   return (
     <div>
       {links.map((link) => (

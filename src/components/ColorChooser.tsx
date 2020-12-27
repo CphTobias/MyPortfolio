@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { Header } from "./Header";
 
-export const ColorChooser = ({ handleColorPick, currentDirLinks }) => {
+interface Props {
+  handleColorPick: (color: string) => void;
+  currentDirLinks: JSX.Element;
+}
+
+export const ColorChooser: React.FC<Props> = ({
+  handleColorPick,
+  currentDirLinks,
+}) => {
   const [newcolor, setNewColor] = useState("yellow");
 
-  const handleClick = (color) => {
+  const handleClick = (color: string) => {
     handleColorPick(color);
 
     setNewColor(color);

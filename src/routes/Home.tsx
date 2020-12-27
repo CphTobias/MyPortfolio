@@ -3,7 +3,11 @@ import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 
-export const Home = ({ color }) => {
+interface Props {
+  color: string;
+}
+
+export const Home: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="mainContainer container">

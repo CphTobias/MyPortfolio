@@ -2,7 +2,11 @@ import React from "react";
 import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 
-export const About = ({ color }) => {
+interface Props {
+  color: string;
+}
+
+export const About: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="mainContainer container">

@@ -1,6 +1,12 @@
 import React from "react";
 
-export const Header = (props) => {
+interface Props {
+  size: string;
+  color?: string;
+  title: string;
+}
+
+export const Header: React.FC<Props> = (props) => {
   const checkSize = () => {
     if (props.size === "h1") {
       return <h1 className={"default-header-" + props.color}>{props.title}</h1>;

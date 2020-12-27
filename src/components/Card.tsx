@@ -1,12 +1,22 @@
 import React from "react";
 import { Text } from "./Text";
 import { useHistory } from "react-router-dom";
+import { Button } from "./Button";
+
+interface Props {
+  image: string;
+  altId: string;
+  color: string;
+  cardText: string;
+  button?: JSX.Element;
+  to?: string;
+}
 
 /**
  * adding a "to" prop will make it a link, otherwise just text
  * @param {image, altId, color, cardText, to} props
  */
-export const Card = (props) => {
+export const Card: React.FC<Props> = (props) => {
   const history = useHistory();
 
   return (

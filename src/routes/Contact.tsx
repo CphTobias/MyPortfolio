@@ -1,7 +1,11 @@
 import React from "react";
 import { Header } from "../components/Header";
 
-export const Contact = ({ color }) => {
+interface Props {
+  color: string;
+}
+
+export const Contact: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="mainContainer container">

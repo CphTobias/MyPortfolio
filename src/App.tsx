@@ -10,10 +10,10 @@ import { CurrentDirLinks } from "./components/CurrentDirLinks";
 import { Fog } from "./routes/home/Fog";
 import { Cupcakes } from "./routes/home/Cupcakes";
 
-export default function App() {
-  const [color, setColor] = useState("yellow");
+export const App: React.FC = () => {
+  const [color, setColor] = useState<string>("yellow");
 
-  const handleColorPick = (newcolor) => {
+  const handleColorPick = (newcolor: string) => {
     setColor(newcolor);
   };
 
@@ -26,14 +26,14 @@ export default function App() {
             exact
             render={() => (
               <div>
-                <Navbar handleColorPick={handleColorPick} color={color} />
+                <Navbar color={color} />
                 <ColorChooser
                   handleColorPick={handleColorPick}
                   currentDirLinks={
                     <CurrentDirLinks links={[""]} color={color} />
                   }
                 />
-                <Home color={color} handleColorPick={handleColorPick} />
+                <Home color={color} />
               </div>
             )}
           />
@@ -42,7 +42,7 @@ export default function App() {
             exact
             render={() => (
               <div>
-                <Navbar handleColorPick={handleColorPick} color={color} />
+                <Navbar color={color} />
                 <ColorChooser
                   handleColorPick={handleColorPick}
                   currentDirLinks={
@@ -58,7 +58,7 @@ export default function App() {
             exact
             render={() => (
               <div>
-                <Navbar handleColorPick={handleColorPick} color={color} />
+                <Navbar color={color} />
                 <ColorChooser
                   handleColorPick={handleColorPick}
                   currentDirLinks={
@@ -74,7 +74,7 @@ export default function App() {
             exact
             render={() => (
               <div>
-                <Navbar handleColorPick={handleColorPick} color={color} />
+                <Navbar color={color} />
                 <ColorChooser
                   handleColorPick={handleColorPick}
                   currentDirLinks={
@@ -90,7 +90,7 @@ export default function App() {
             exact
             render={() => (
               <div>
-                <Navbar handleColorPick={handleColorPick} color={color} />
+                <Navbar color={color} />
                 <ColorChooser
                   handleColorPick={handleColorPick}
                   currentDirLinks={
@@ -106,4 +106,6 @@ export default function App() {
       </BrowserRouter>
     </>
   );
-}
+};
+
+export default App;

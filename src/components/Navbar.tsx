@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link, useHistory } from "react-router-dom";
 
-export const Navbar = ({ color }) => {
+export const Navbar: React.FC<{ color: string }> = ({ color }) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const history = useHistory();
@@ -75,7 +75,7 @@ export const Navbar = ({ color }) => {
                     onClick={() => {
                       history.push("/");
                     }}
-                    class="fas fa-file-contract fa-2x pointer"
+                    className="fas fa-file-contract fa-2x pointer"
                   ></i>
                   <Link className="navbar-mainlink" to={"/"}>
                     Portfolio
@@ -113,7 +113,7 @@ export const Navbar = ({ color }) => {
                     onClick={() => {
                       history.push("/");
                     }}
-                    class="fas fa-file-contract fa-2x pointer"
+                    className="fas fa-file-contract fa-2x pointer"
                   ></i>
                   <Link className="navbar-mainlink" to={"/"}>
                     Portfolio

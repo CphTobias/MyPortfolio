@@ -1,10 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-export const Cupcakes = (props) => {
+interface Props {
+  color: string;
+}
+
+export const Cupcakes: React.FC<Props> = (props) => {
   const color = props.color;
 
   return (
@@ -47,8 +50,4 @@ export const Cupcakes = (props) => {
       </main>
     </div>
   );
-};
-
-Cupcakes.propTypes = {
-  color: PropTypes.string,
 };

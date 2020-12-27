@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-export const Fog = ({ color }) => {
+interface Props {
+  color: string;
+}
+
+export const Fog: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="mainContainer container">
