@@ -13,7 +13,9 @@ export const Text: React.FC<Props> = (props) => {
   return (
     <div>
       {props.text.map((p) => (
-        <p className={"text-color-" + props.color}>{p}</p>
+        <p key={p} className={"text-color-" + props.color}>
+          {p}
+        </p>
       ))}
     </div>
   );

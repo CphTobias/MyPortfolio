@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
+import { Information } from "../components/Information";
+import { Text } from "../components/Text";
 
 interface Props {
   color: string;
@@ -10,7 +12,7 @@ interface Props {
 export const Home: React.FC<Props> = ({ color }) => {
   return (
     <div>
-      <main className="mainContainer container">
+      <main className="container">
         <div
           className={
             color === "yellow"
@@ -18,10 +20,22 @@ export const Home: React.FC<Props> = ({ color }) => {
               : "shadow-container-white"
           }
         >
-          <Header size="h1" color={color} title="Home page" />
+          <div className="row">
+            <div className="col-md-12">
+              <Header size="h1" color={color} title="Introduction" />
+              <Text
+                color={color}
+                text={[
+                  "Hi, I'm Tobias.",
+                  "In this portfolio, you will be able to find my past projects, with explenations of how they work.",
+                  "You will also be able find a list of everything i have experience with, when it comes to Computer Science",
+                ]}
+              />
+            </div>
+          </div>
         </div>
         <div className={"shadow-container-" + color}>
-          <Header size="h1" color={color} title="My projects" />
+          <Header size="h1" color={color} title="Past projects" />
           <div className="row" style={{ marginTop: "25px" }}>
             <div className="col-md-2"></div>
             <div className="col-md-3">
@@ -52,6 +66,7 @@ export const Home: React.FC<Props> = ({ color }) => {
             </div>
           </div>
         </div>
+        <Information color={color} />
       </main>
     </div>
   );

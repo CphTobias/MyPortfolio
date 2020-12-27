@@ -1,7 +1,6 @@
 import React from "react";
 import { Text } from "./Text";
 import { useHistory } from "react-router-dom";
-import { Button } from "./Button";
 
 interface Props {
   image: string;

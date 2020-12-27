@@ -12,7 +12,7 @@ export const Cupcakes: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <main className="mainContainer container">
+      <main className="container">
         <div
           className={
             color === "yellow"

@@ -10,7 +10,7 @@ interface Props {
 export const Fog: React.FC<Props> = ({ color }) => {
   return (
     <div>
-      <main className="mainContainer container">
+      <main className="container">
         <div
           className={
             color === "yellow"

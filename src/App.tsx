@@ -32,6 +32,7 @@ export const App: React.FC = () => {
                   currentDirLinks={
                     <CurrentDirLinks links={[""]} color={color} />
                   }
+                  currentColor={color}
                 />
                 <Home color={color} />
               </div>
@@ -42,14 +43,17 @@ export const App: React.FC = () => {
             exact
             render={() => (
               <div>
-                <Navbar color={color} />
-                <ColorChooser
-                  handleColorPick={handleColorPick}
-                  currentDirLinks={
-                    <CurrentDirLinks links={["", "fog"]} color={color} />
-                  }
-                />
-                <Fog color={color} />
+                <div className="mainContainer">
+                  <Navbar color={color} />
+                  <ColorChooser
+                    handleColorPick={handleColorPick}
+                    currentDirLinks={
+                      <CurrentDirLinks links={["", "fog"]} color={color} />
+                    }
+                    currentColor={color}
+                  />
+                  <Fog color={color} />
+                </div>
               </div>
             )}
           />
@@ -58,14 +62,17 @@ export const App: React.FC = () => {
             exact
             render={() => (
               <div>
-                <Navbar color={color} />
-                <ColorChooser
-                  handleColorPick={handleColorPick}
-                  currentDirLinks={
-                    <CurrentDirLinks links={["", "cupcakes"]} color={color} />
-                  }
-                />
-                <Cupcakes color={color} />
+                <div className="mainContainer">
+                  <Navbar color={color} />
+                  <ColorChooser
+                    handleColorPick={handleColorPick}
+                    currentDirLinks={
+                      <CurrentDirLinks links={["", "cupcakes"]} color={color} />
+                    }
+                    currentColor={color}
+                  />
+                  <Cupcakes color={color} />
+                </div>
               </div>
             )}
           />
@@ -74,14 +81,17 @@ export const App: React.FC = () => {
             exact
             render={() => (
               <div>
-                <Navbar color={color} />
-                <ColorChooser
-                  handleColorPick={handleColorPick}
-                  currentDirLinks={
-                    <CurrentDirLinks links={["about"]} color={color} />
-                  }
-                />
-                <About color={color} />
+                <div className="mainContainer">
+                  <Navbar color={color} />
+                  <ColorChooser
+                    handleColorPick={handleColorPick}
+                    currentDirLinks={
+                      <CurrentDirLinks links={["about"]} color={color} />
+                    }
+                    currentColor={color}
+                  />
+                  <About color={color} />
+                </div>
               </div>
             )}
           />
@@ -90,14 +100,19 @@ export const App: React.FC = () => {
             exact
             render={() => (
               <div>
-                <Navbar color={color} />
-                <ColorChooser
-                  handleColorPick={handleColorPick}
-                  currentDirLinks={
-                    <CurrentDirLinks links={["contact"]} color={color} />
-                  }
-                />
-                <Contact color={color} />
+                <div className="page-content">
+                  <div className="mainContainer">
+                    <Navbar color={color} />
+                    <ColorChooser
+                      handleColorPick={handleColorPick}
+                      currentDirLinks={
+                        <CurrentDirLinks links={["contact"]} color={color} />
+                      }
+                      currentColor={color}
+                    />
+                    <Contact color={color} />
+                  </div>
+                </div>
               </div>
             )}
           />

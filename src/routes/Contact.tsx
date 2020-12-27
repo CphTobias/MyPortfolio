@@ -8,7 +8,7 @@ interface Props {
 export const Contact: React.FC<Props> = ({ color }) => {
   return (
     <div>
-      <main className="mainContainer container">
+      <main className="container">
         <div
           className={
             color === "yellow"

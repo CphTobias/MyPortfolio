@@ -60,3 +60,15 @@
   border-radius: 10px;
   background-color: rgba(114, 84, 84, 0.4);
 }
+
+.footer-container-yellow {
+  background-color: rgba(200, 194, 169, 1);
+  padding: 13px;
+  border-top: 1px solid black;
+}
+
+.footer-container-white {
+  background-color: rgba(169, 169, 169, 1);
+  padding: 13px;
+  border-top: 1px solid black;
+}
