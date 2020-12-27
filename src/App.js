@@ -8,6 +8,7 @@ import { ColorChooser } from "./components/ColorChooser";
 import { Contact } from "./routes/Contact";
 import { CurrentDirLinks } from "./components/CurrentDirLinks";
 import { Fog } from "./routes/home/Fog";
+import { Cupcakes } from "./routes/home/Cupcakes";
 
 export default function App() {
   const [color, setColor] = useState("yellow");
@@ -49,6 +50,22 @@ export default function App() {
                   }
                 />
                 <Fog color={color} />
+              </div>
+            )}
+          />
+          <Route
+            path="/cupcakes"
+            exact
+            render={() => (
+              <div>
+                <Navbar handleColorPick={handleColorPick} color={color} />
+                <ColorChooser
+                  handleColorPick={handleColorPick}
+                  currentDirLinks={
+                    <CurrentDirLinks links={["", "cupcakes"]} color={color} />
+                  }
+                />
+                <Cupcakes color={color} />
               </div>
             )}
           />

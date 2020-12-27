@@ -20,6 +20,7 @@ export const Card = (props) => {
     >
       <img src={props.image} alt={props.altId} style={{ maxWidth: "100%" }} />
       <Text color={props.color} text={[props.cardText]} />
+      {props.button ? props.button : null}
     </div>
   );
 };

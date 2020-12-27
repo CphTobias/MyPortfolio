@@ -1,0 +1,87 @@
+.btn-yellow-outline-primary {
+  border: 1px solid #282c34;
+  background-color: ghostwhite;
+  transition: 400ms;
+  color: #292929;
+}
+
+.btn-yellow-outline-primary:hover {
+  transition: 400ms;
+  background-color: grey;
+  color: ghostwhite;
+}
+
+.btn-yellow-outline-primary .active {
+  transition: 400ms;
+  background-color: #583b31;
+  color: ghostwhite;
+}
+
+.btn-yellow-primary {
+  border: 1px solid #282c34;
+  background-color: grey;
+  color: ghostwhite;
+  transition: 400ms;
+}
+
+.btn-yellow-primary:hover {
+  transition: 400ms;
+  background-color: rgba(128, 128, 128, 0.6);
+  color: #292929;
+}
+
+.btn-yellow-danger {
+  border: 1px solid #292929;
+  background-color: #ff6060;
+  color: #292929;
+  transition: 400ms;
+}
+
+.btn-yellow-danger:hover {
+  border: 1px solid #ff6060;
+  transition: 400ms;
+  background-color: ghostwhite;
+  color: #ff6060;
+}
+
+.btn-yellow-outline-danger {
+  border: 1px solid #ff6060;
+  background-color: ghostwhite;
+  transition: 400ms;
+  color: #ff6060;
+}
+
+.btn-yellow-outline-danger:hover {
+  border: 1px solid #292929;
+  transition: 400ms;
+  background-color: #ff6060;
+  color: #292929;
+}
+
+.btn-yellow-success {
+  border: 1px solid #292929;
+  background-color: #93d200;
+  color: #292929;
+  transition: 400ms;
+}
+
+.btn-yellow-success:hover {
+  border: 1px solid #93d200;
+  transition: 400ms;
+  background-color: ghostwhite;
+  color: #93d200;
+}
+
+.btn-yellow-outline-success {
+  border: 1px solid #93d200;
+  background-color: ghostwhite;
+  transition: 400ms;
+  color: #93d200;
+}
+
+.btn-yellow-outline-success:hover {
+  border: 1px solid #292929;
+  transition: 400ms;
+  background-color: #93d200;
+  color: #292929;
+}

@@ -3,6 +3,7 @@
 @import "Navbar.css";
 @import "ColorChooser.css";
 @import "Link.css";
+@import "button/Button.css";
 
 * {
   margin: 0;

@@ -1,7 +1,7 @@
 import React from "react";
+import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
-import { Text } from "../components/Text";
 
 export const Home = ({ color }) => {
   return (
@@ -26,7 +26,14 @@ export const Home = ({ color }) => {
                 cardText="Fog clone"
                 image="https://picsum.photos/id/237/200/200"
                 altId="Yes"
-                to="fog"
+                button={
+                  <Button
+                    color={color}
+                    text="Go to project"
+                    link="fog"
+                    buttonStyle="btn-block"
+                  />
+                }
               />
             </div>
             <div className="col-md-2"></div>
@@ -36,7 +43,7 @@ export const Home = ({ color }) => {
                 cardText="Cupcake order website"
                 image="https://picsum.photos/id/237/200/200"
                 altId="Yes"
-                to="fog"
+                to="cupcakes"
               />
             </div>
           </div>
