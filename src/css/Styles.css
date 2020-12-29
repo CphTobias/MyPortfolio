@@ -4,6 +4,7 @@
 @import "ColorChooser.css";
 @import "Link.css";
 @import "button/Button.css";
+@import "form/Form.css";
 
 * {
   margin: 0;

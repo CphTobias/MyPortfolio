@@ -18,7 +18,7 @@ export const Header: React.FC<Props> = (props) => {
       return <h4 className="default-header">{props.title}</h4>;
     } else if (props.size === "h5") {
       return <h5 className="default-header">{props.title}</h5>;
-    } else if (props.size === "h6") {
+    } else {
       return <h6 className="default-header">{props.title}</h6>;
     }
   };

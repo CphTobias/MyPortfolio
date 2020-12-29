@@ -1,0 +1,46 @@
+@import "FormYellow.css";
+
+textarea {
+  outline: none;
+  border-radius: 5px;
+  padding: 6px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+textarea:focus {
+  padding: 10px;
+  height: auto;
+}
+
+input {
+  outline: none;
+  transition: 300ms;
+  border: none;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  height: auto;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+input:focus {
+  padding: 10px;
+}
+
+.textarea-error {
+  border: 2px solid rgb(246, 120, 78);
+}
+
+.input-error {
+  border-bottom: 3px solid rgb(246, 120, 78);
+}
+
+.input-error::placeholder,
+.textarea-error::placeholder {
+  color: rgba(95, 66, 62, 0.6);
+}

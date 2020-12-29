@@ -3,9 +3,13 @@ import { useHistory } from "react-router-dom";
 
 interface Props {
   buttonStyle: string;
-  link: string;
+  link?: string;
   text: string;
   color: string;
+  /**
+   * @params Pass in the type (button is infered if none given)
+   */
+  type?: "button" | "submit" | "reset";
 }
 
 /**
@@ -14,7 +18,13 @@ interface Props {
  * link(can be null if you dont want link),
  * text, color} props
  */
-export const Button: React.FC<Props> = ({ buttonStyle, link, color, text }) => {
+export const Button: React.FC<Props> = ({
+  buttonStyle,
+  link,
+  color,
+  text,
+  type,
+}) => {
   const history = useHistory();
 
   const checkButtonStyle = () => {
@@ -40,6 +50,7 @@ export const Button: React.FC<Props> = ({ buttonStyle, link, color, text }) => {
       <button
         className={checkButtonStyle()}
         onClick={link ? () => history.push("/" + link) : undefined}
+        type={type ? type : "button"}
       >
         {text}
       </button>

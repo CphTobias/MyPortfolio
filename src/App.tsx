@@ -7,8 +7,8 @@ import { Navbar } from "./components/Navbar";
 import { ColorChooser } from "./components/ColorChooser";
 import { Contact } from "./routes/Contact";
 import { CurrentDirLinks } from "./components/CurrentDirLinks";
-import { Fog } from "./routes/home/Fog";
 import { Cupcakes } from "./routes/home/Cupcakes";
+import { Fog } from "./routes/home/Fog";
 
 export const App: React.FC = () => {
   const [color, setColor] = useState<string>("yellow");

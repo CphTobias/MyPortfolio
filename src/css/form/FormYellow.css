@@ -1,0 +1,27 @@
+.textarea-yellow {
+  background: rgba(186, 186, 186, 0.7);
+  color: rgba(88, 59, 49, 0.8);
+}
+
+.textarea-yellow:focus {
+  box-shadow: 0 0 3pt 3pt #5f5e5e;
+  background: rgba(186, 186, 186, 0.7);
+  color: rgb(88, 59, 49);
+}
+
+.input-text-yellow::placeholder,
+.textarea-yellow::placeholder {
+  color: rgba(95, 66, 62, 0.6);
+}
+
+.input-text-yellow {
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid rgb(88, 59, 49);
+  color: rgb(88, 59, 49);
+}
+
+.input-text-yellow:focus {
+  transition: 300ms;
+  box-shadow: 0 0 3pt 3pt #5f5e5e;
+  background: rgba(186, 186, 186, 0.7);
+}
