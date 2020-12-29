@@ -78,7 +78,7 @@ export const Navbar: React.FC<{ color: string }> = ({ color }) => {
                     className="fas fa-file-contract fa-2x pointer"
                   ></i>
                   <Link className="navbar-mainlink" to={"/"}>
-                    Portfolio
+                    Tobias Zimmermann
                   </Link>
                 </li>
               </ul>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<{ color: string }> = ({ color }) => {
                     className="fas fa-file-contract fa-2x pointer"
                   ></i>
                   <Link className="navbar-mainlink" to={"/"}>
-                    Portfolio
+                    Tobias Zimmermann
                   </Link>
                 </li>
               </ul>

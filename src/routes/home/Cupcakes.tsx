@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
@@ -13,13 +14,7 @@ export const Cupcakes: React.FC<Props> = (props) => {
   return (
     <div>
       <main className="container">
-        <div
-          className={
-            color === "yellow"
-              ? "shadow-container-yellow"
-              : "shadow-container-white"
-          }
-        >
+        <div className={`shadow-container-${color}`}>
           <Header size="h1" color={color} title="Cupcakes" />
           <Header
             size="h3"
@@ -46,6 +41,50 @@ export const Cupcakes: React.FC<Props> = (props) => {
           >
             Project github repository
           </Link>
+        </div>
+        <div className={`shadow-container-${color}`}>
+          <Header size="h1" color={color} title="Learn more" />
+          <Header
+            size="h3"
+            color={color}
+            title="In this section i will tell you a bit about how the project was created..."
+          />
+          <Header
+            size="h5"
+            color={color}
+            title="Click the link for whichever one, you want to learn more about"
+          />
+          <div className="container">
+            <div className="row" style={{ marginTop: "30px" }}>
+              <div className="col-md-4">
+                <Card
+                  altId="api"
+                  cardText="API"
+                  color={color}
+                  image={"https://picsum.photos/id/237/200/200"}
+                  to="fog"
+                />
+              </div>
+              <div className="col-md-4">
+                <Card
+                  altId="Infrastructure"
+                  cardText="Infrastructure"
+                  color={color}
+                  image={"https://picsum.photos/id/237/200/200"}
+                  to="fog"
+                />
+              </div>
+              <div className="col-md-4">
+                <Card
+                  altId="FrontEnd"
+                  cardText="Front end"
+                  color={color}
+                  image={"https://picsum.photos/id/237/200/200"}
+                  to="fog"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

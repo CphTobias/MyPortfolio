@@ -10,13 +10,7 @@ export const About: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="container">
-        <div
-          className={
-            color === "yellow"
-              ? "shadow-container-yellow"
-              : "shadow-container-white"
-          }
-        >
+        <div className={`shadow-container-${color}`}>
           <Header size="h1" color={color} title="About me" />
           <Header size="h3" color={color} title="Cphbusiness" />
           <br></br>

@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import * as React from "react";
-import { Button } from "../Button";
-import { Header } from "../Header";
+import { Button } from "./Button";
+import { Header } from "./Header";
 import * as emailjs from "emailjs-com";
 
 const { useState } = React;

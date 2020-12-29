@@ -7,13 +7,16 @@ interface Props {
   altId: string;
   color: string;
   cardText: string;
+  /**
+   * Needs a button component
+   */
   button?: JSX.Element;
   to?: string;
 }
 
 /**
  * adding a "to" prop will make it a link, otherwise just text
- * @param {image, altId, color, cardText, to} props
+ * @param {image, altId, color, cardText, to, button} props
  */
 export const Card: React.FC<Props> = (props) => {
   const history = useHistory();

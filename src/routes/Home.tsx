@@ -13,13 +13,7 @@ export const Home: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="container">
-        <div
-          className={
-            color === "yellow"
-              ? "shadow-container-yellow"
-              : "shadow-container-white"
-          }
-        >
+        <div className={`shadow-container-${color}`}>
           <div className="row">
             <div className="col-md-12">
               <Header size="h1" color={color} title="Introduction" />
@@ -61,7 +55,14 @@ export const Home: React.FC<Props> = ({ color }) => {
                 cardText="Cupcake order website"
                 image="https://picsum.photos/id/237/200/200"
                 altId="Yes"
-                to="cupcakes"
+                button={
+                  <Button
+                    color={color}
+                    text="Go to project"
+                    link="cupcakes"
+                    buttonStyle="btn-block"
+                  />
+                }
               />
             </div>
           </div>

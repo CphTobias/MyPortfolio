@@ -14,7 +14,7 @@ export const Information: React.FC<Props> = ({ color }) => {
         <Header size="h1" title="Information" color={color} />
         <div className="row" style={{ paddingTop: "15px" }}>
           <div className="col-md-6">
-            <Header size="h2" title="Useful languages" color={color} />
+            <Header size="h2" title="Languages" color={color} />
             <div style={{ textAlign: "center" }}>
               <Text
                 color={color}

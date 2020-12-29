@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactForm } from "../components/form/ContactForm";
+import { ContactForm } from "../components/ContactForm";
 import { Header } from "../components/Header";
 
 interface Props {
@@ -10,13 +10,7 @@ export const Contact: React.FC<Props> = ({ color }) => {
   return (
     <div>
       <main className="container">
-        <div
-          className={
-            color === "yellow"
-              ? "shadow-container-yellow"
-              : "shadow-container-white"
-          }
-        >
+        <div className={`shadow-container-${color}`}>
           <Header size="h1" color={color} title="Contact" />
           <Header
             size="h5"
