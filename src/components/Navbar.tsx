@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link, useHistory } from "react-router-dom";
+import { ColorContext } from "../globalstates/ColorContext";
 
-export const Navbar: React.FC<{ color: string }> = ({ color }) => {
+interface Props {}
+
+export const Navbar: React.FC<Props> = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const history = useHistory();
+  const color = useContext(ColorContext);
 
   const handleMobileLinks = () => {
     setShowMobileLinks(!showMobileLinks);

@@ -1,19 +1,19 @@
 import * as React from "react";
+import { ColorContext } from "../globalstates/ColorContext";
 import { Header } from "./Header";
 
-const { useState } = React;
+const { useState, useContext } = React;
 
 interface Props {
   handleColorPick: (color: string) => void;
   currentDirLinks: JSX.Element;
-  currentColor: string;
 }
 
 export const ColorChooser: React.FC<Props> = ({
   handleColorPick,
   currentDirLinks,
-  currentColor,
 }) => {
+  const currentColor = useContext(ColorContext);
   const [newcolor, setNewColor] = useState<string | any>(currentColor);
 
   const handleClick = (color: string) => {

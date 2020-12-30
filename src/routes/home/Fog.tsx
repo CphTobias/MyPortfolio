@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ColorContext } from "../../globalstates/ColorContext";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-interface Props {
-  color: string;
-}
+interface Props {}
 
-export const Fog: React.FC<Props> = ({ color }) => {
+export const Fog: React.FC<Props> = () => {
+  const color = useContext(ColorContext);
   return (
     <div>
       <main className="container">
         <div className={`shadow-container-${color}`}>
-          <Header size="h1" color={color} title="Fog" />
-          <Header
-            size="h3"
-            color={color}
-            title="Project given by Cphbusiness"
-          />
+          <Header size="h1" title="Fog" />
+          <Header size="h3" title="Project given by Cphbusiness" />
           <Header
             size="h4"
-            color={color}
             title="Created with a java backend, using tomcat + .jsp and java webservlets"
           />
           <Text
-            color={color}
             text={[
               "This project was done in about 4-5 weeks i believe.",
               "The project was about creating a sort of clone of a company called Fog. They used to have or maybe still has, a very outdated system.",
@@ -41,15 +35,13 @@ export const Fog: React.FC<Props> = ({ color }) => {
           </Link>
         </div>
         <div className={`shadow-container-${color}`}>
-          <Header size="h1" color={color} title="Learn more" />
+          <Header size="h1" title="Learn more" />
           <Header
             size="h3"
-            color={color}
             title="In this section i will tell you a bit about how the project was created..."
           />
           <Header
             size="h5"
-            color={color}
             title="Click the link for whichever one, you want to learn more about"
           />
           <div className="container">
@@ -58,27 +50,24 @@ export const Fog: React.FC<Props> = ({ color }) => {
                 <Card
                   altId="api"
                   cardText="API"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog"
+                  to="fog/api"
                 />
               </div>
               <div className="col-md-4">
                 <Card
                   altId="Infrastructure"
                   cardText="Infrastructure"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog"
+                  to="fog/infrastructure"
                 />
               </div>
               <div className="col-md-4">
                 <Card
                   altId="FrontEnd"
                   cardText="Front end"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog"
+                  to="fog/frontend"
                 />
               </div>
             </div>

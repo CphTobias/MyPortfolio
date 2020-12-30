@@ -40,14 +40,9 @@ export const ContactForm: React.FC<Props> = ({ color }) => {
   const messageHasBeenSend = () => {
     return (
       <div>
-        <Header
-          size="h1"
-          color={color}
-          title="Thank you for visiting the website!"
-        />
+        <Header size="h1" title="Thank you for visiting the website!" />
         <Header
           size="h3"
-          color={color}
           title={"I will get back to you as soon as possible"}
         />
       </div>

@@ -1,33 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ColorContext } from "../../globalstates/ColorContext";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-interface Props {
-  color: string;
-}
+interface Props {}
 
-export const Cupcakes: React.FC<Props> = (props) => {
-  const color = props.color;
+export const Cupcakes: React.FC<Props> = () => {
+  const color = useContext(ColorContext);
 
   return (
     <div>
       <main className="container">
         <div className={`shadow-container-${color}`}>
-          <Header size="h1" color={color} title="Cupcakes" />
-          <Header
-            size="h3"
-            color={color}
-            title="Project given by Cphbusiness"
-          />
+          <Header size="h1" title="Cupcakes" />
+          <Header size="h3" title="Project given by Cphbusiness" />
           <Header
             size="h4"
-            color={color}
             title="Created with a java backend, using tomcat + .jsp and java webservlets"
           />
           <Text
-            color={color}
             text={[
               "This was our first project in web development, we learned a lot about the fundementals, such as post redirect get.",
               "We were given the task of creating a website which, would make it possible for users, to put as many cupcakes they want into a basket.",
@@ -43,15 +36,13 @@ export const Cupcakes: React.FC<Props> = (props) => {
           </Link>
         </div>
         <div className={`shadow-container-${color}`}>
-          <Header size="h1" color={color} title="Learn more" />
+          <Header size="h1" title="Learn more" />
           <Header
             size="h3"
-            color={color}
             title="In this section i will tell you a bit about how the project was created..."
           />
           <Header
             size="h5"
-            color={color}
             title="Click the link for whichever one, you want to learn more about"
           />
           <div className="container">
@@ -60,7 +51,6 @@ export const Cupcakes: React.FC<Props> = (props) => {
                 <Card
                   altId="api"
                   cardText="API"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
                   to="fog"
                 />
@@ -69,7 +59,6 @@ export const Cupcakes: React.FC<Props> = (props) => {
                 <Card
                   altId="Infrastructure"
                   cardText="Infrastructure"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
                   to="fog"
                 />
@@ -78,7 +67,6 @@ export const Cupcakes: React.FC<Props> = (props) => {
                 <Card
                   altId="FrontEnd"
                   cardText="Front end"
-                  color={color}
                   image={"https://picsum.photos/id/237/200/200"}
                   to="fog"
                 />

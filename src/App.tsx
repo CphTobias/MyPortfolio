@@ -9,6 +9,10 @@ import { Contact } from "./routes/Contact";
 import { CurrentDirLinks } from "./components/CurrentDirLinks";
 import { Cupcakes } from "./routes/home/Cupcakes";
 import { Fog } from "./routes/home/Fog";
+import { FogApi } from "./routes/home/FogApi";
+import { ColorContext } from "./globalstates/ColorContext";
+import { FogInfrastructure } from "./routes/home/FogInfrastructure";
+import { FogFrontEnd } from "./routes/home/FogFrontEnd";
 
 export const App: React.FC = () => {
   const [color, setColor] = useState<string>("yellow");
@@ -17,107 +21,154 @@ export const App: React.FC = () => {
     setColor(newcolor);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <BrowserRouter>
-        <Switch>
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <div>
-                <Navbar color={color} />
-                <ColorChooser
-                  handleColorPick={handleColorPick}
-                  currentDirLinks={
-                    <CurrentDirLinks links={[""]} color={color} />
-                  }
-                  currentColor={color}
-                />
-                <Home color={color} />
-              </div>
-            )}
-          />
-          <Route
-            path="/fog"
-            exact
-            render={() => (
-              <div>
-                <div className="mainContainer">
-                  <Navbar color={color} />
+        <ColorContext.Provider value={color}>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <div>
+                  <Navbar />
                   <ColorChooser
                     handleColorPick={handleColorPick}
-                    currentDirLinks={
-                      <CurrentDirLinks links={["", "fog"]} color={color} />
-                    }
-                    currentColor={color}
+                    currentDirLinks={<CurrentDirLinks links={[""]} />}
                   />
-                  <Fog color={color} />
+                  <Home />
                 </div>
-              </div>
-            )}
-          />
-          <Route
-            path="/cupcakes"
-            exact
-            render={() => (
-              <div>
-                <div className="mainContainer">
-                  <Navbar color={color} />
-                  <ColorChooser
-                    handleColorPick={handleColorPick}
-                    currentDirLinks={
-                      <CurrentDirLinks links={["", "cupcakes"]} color={color} />
-                    }
-                    currentColor={color}
-                  />
-                  <Cupcakes color={color} />
-                </div>
-              </div>
-            )}
-          />
-          <Route
-            path="/about"
-            exact
-            render={() => (
-              <div>
-                <div className="mainContainer">
-                  <Navbar color={color} />
-                  <ColorChooser
-                    handleColorPick={handleColorPick}
-                    currentDirLinks={
-                      <CurrentDirLinks links={["about"]} color={color} />
-                    }
-                    currentColor={color}
-                  />
-                  <About color={color} />
-                </div>
-              </div>
-            )}
-          />
-          <Route
-            path="/contact"
-            exact
-            render={() => (
-              <div>
-                <div className="page-content">
+              )}
+            />
+            <Route
+              path="/fog"
+              exact
+              render={() => (
+                <div>
                   <div className="mainContainer">
-                    <Navbar color={color} />
+                    <Navbar />
+                    <ColorChooser
+                      handleColorPick={handleColorPick}
+                      currentDirLinks={<CurrentDirLinks links={["", "fog"]} />}
+                    />
+                    <Fog />
+                  </div>
+                </div>
+              )}
+            />
+            <Route
+              path="/fog/api"
+              exact
+              render={() => (
+                <div>
+                  <div className="mainContainer">
+                    <Navbar />
                     <ColorChooser
                       handleColorPick={handleColorPick}
                       currentDirLinks={
-                        <CurrentDirLinks links={["contact"]} color={color} />
+                        <CurrentDirLinks links={["", "fog", "fog/api"]} />
                       }
-                      currentColor={color}
                     />
-                    <Contact color={color} />
+                    <FogApi scrollToTop={scrollToTop} />
                   </div>
                 </div>
-              </div>
-            )}
-          />
-          <Route path="/" render={() => <div>404</div>} />
-        </Switch>
+              )}
+            />
+            <Route
+              path="/fog/infrastructure"
+              exact
+              render={() => (
+                <div>
+                  <Navbar />
+                  <ColorChooser
+                    handleColorPick={handleColorPick}
+                    currentDirLinks={
+                      <CurrentDirLinks
+                        links={["", "fog", "fog/infrastructure"]}
+                      />
+                    }
+                  />
+                  <FogInfrastructure scrollToTop={scrollToTop} />
+                </div>
+              )}
+            />
+            <Route
+              path="/fog/frontend"
+              exact
+              render={() => (
+                <div>
+                  <Navbar />
+                  <ColorChooser
+                    handleColorPick={handleColorPick}
+                    currentDirLinks={
+                      <CurrentDirLinks links={["", "fog", "fog/frontend"]} />
+                    }
+                  />
+                  <FogFrontEnd scrollToTop={scrollToTop} />
+                </div>
+              )}
+            />
+            <Route
+              path="/cupcakes"
+              exact
+              render={() => (
+                <div>
+                  <div className="mainContainer">
+                    <Navbar />
+                    <ColorChooser
+                      handleColorPick={handleColorPick}
+                      currentDirLinks={
+                        <CurrentDirLinks links={["", "cupcakes"]} />
+                      }
+                    />
+                    <Cupcakes />
+                  </div>
+                </div>
+              )}
+            />
+            <Route
+              path="/about"
+              exact
+              render={() => (
+                <div>
+                  <div className="mainContainer">
+                    <Navbar />
+                    <ColorChooser
+                      handleColorPick={handleColorPick}
+                      currentDirLinks={<CurrentDirLinks links={["about"]} />}
+                    />
+                    <About />
+                  </div>
+                </div>
+              )}
+            />
+            <Route
+              path="/contact"
+              exact
+              render={() => (
+                <div>
+                  <div className="page-content">
+                    <div className="mainContainer">
+                      <Navbar />
+                      <ColorChooser
+                        handleColorPick={handleColorPick}
+                        currentDirLinks={
+                          <CurrentDirLinks links={["contact"]} />
+                        }
+                      />
+                      <Contact />
+                    </div>
+                  </div>
+                </div>
+              )}
+            />
+            <Route path="/" render={() => <div>404</div>} />
+          </Switch>
+        </ColorContext.Provider>
       </BrowserRouter>
     </>
   );

@@ -11,13 +11,12 @@ export const Information: React.FC<Props> = ({ color }) => {
   return (
     <>
       <div className={"shadow-container-" + color}>
-        <Header size="h1" title="Information" color={color} />
+        <Header size="h1" title="Information" />
         <div className="row" style={{ paddingTop: "15px" }}>
           <div className="col-md-6">
-            <Header size="h2" title="Languages" color={color} />
+            <Header size="h2" title="Languages" />
             <div style={{ textAlign: "center" }}>
               <Text
-                color={color}
                 text={[
                   "Java",
                   "MySQL",
