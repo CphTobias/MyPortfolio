@@ -10,6 +10,10 @@ interface Props {
    * @params Pass in the type (button is infered if none given)
    */
   type?: "button" | "submit" | "reset";
+  /**
+   * Pass a valid onclick function
+   */
+  onClick?: () => void;
 }
 
 /**
@@ -24,6 +28,7 @@ export const Button: React.FC<Props> = ({
   color,
   text,
   type,
+  onClick,
 }) => {
   const history = useHistory();
 
@@ -45,11 +50,22 @@ export const Button: React.FC<Props> = ({
     }
   };
 
+  const checkOnClick = () => {
+    if (link && onClick) {
+      onClick();
+      history.push("/" + link);
+    } else if (link) {
+      history.push("/" + link);
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <div>
       <button
         className={checkButtonStyle()}
-        onClick={link ? () => history.push("/" + link) : undefined}
+        onClick={checkOnClick}
         type={type ? type : "button"}
       >
         {text}

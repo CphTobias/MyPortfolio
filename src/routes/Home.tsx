@@ -10,6 +10,7 @@ interface Props {}
 
 export const Home: React.FC<Props> = () => {
   const color = useContext(ColorContext);
+
   return (
     <div>
       <main className="container">
@@ -17,13 +18,15 @@ export const Home: React.FC<Props> = () => {
           <div className="row">
             <div className="col-md-12">
               <Header size="h1" title="Introduction" />
-              <Text
-                text={[
-                  "Hi, I'm Tobias.",
-                  "In this portfolio, you will be able to find my past projects, with explenations of how they work.",
-                  "You will also be able find a list of everything i have experience with, when it comes to Computer Science",
-                ]}
-              />
+              <div className="textfield">
+                <Text
+                  text={[
+                    "Hi, I'm Tobias.",
+                    "In this portfolio, you will be able to find my past projects, with explenations of how they work.",
+                    "You will also be able find a list of everything i have experience with, when it comes to Computer Science",
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -55,7 +58,7 @@ export const Home: React.FC<Props> = () => {
                 button={
                   <Button
                     color={color}
-                    text="Go to project"
+                    text={`Go to project`}
                     link="cupcakes"
                     buttonStyle="btn-block"
                   />

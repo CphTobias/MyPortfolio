@@ -2,16 +2,18 @@
   color: black;
   display: flex;
   float: left;
-  margin-right: 8px;
+  margin-left: 5px;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .dirlink-yellow {
-  color: dimgrey;
+  color: rgb(68, 66, 66);
   display: flex;
   float: left;
-  margin-right: 8px;
+  margin-left: 5px;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .website-link-white {

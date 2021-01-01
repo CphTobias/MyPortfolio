@@ -4,17 +4,12 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-const { useEffect, useContext } = React;
+const { useContext } = React;
 
-interface Props {
-  scrollToTop: () => void;
-}
+interface Props {}
 
-export const FogFrontEnd: React.FC<Props> = ({ scrollToTop }) => {
+export const FogFrontEnd: React.FC<Props> = () => {
   const color = useContext(ColorContext);
-  useEffect(() => {
-    scrollToTop();
-  }, [scrollToTop]);
 
   return (
     <div>
@@ -22,7 +17,9 @@ export const FogFrontEnd: React.FC<Props> = ({ scrollToTop }) => {
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Fog front end" />
           <Header size="h3" title="Front end section" />
-          <Text text={["Some text about the front end"]} />
+          <div className="textfield">
+            <Text text={["Some text about the front end"]} />
+          </div>
         </div>
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Front end sections" />
@@ -37,7 +34,7 @@ export const FogFrontEnd: React.FC<Props> = ({ scrollToTop }) => {
                   altId="servlet/commandPattern"
                   cardText="Sevlet/Command pattern"
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog/command-pattern"
+                  to="fog/frontend/command-pattern"
                 />
               </div>
               <div className="col-md-4">
@@ -45,7 +42,7 @@ export const FogFrontEnd: React.FC<Props> = ({ scrollToTop }) => {
                   altId="JSP"
                   cardText="JSP/Tomcat"
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog/jsp"
+                  to="fog/frontend/jsp"
                 />
               </div>
               <div className="col-md-4">
@@ -53,7 +50,7 @@ export const FogFrontEnd: React.FC<Props> = ({ scrollToTop }) => {
                   altId="Javascript"
                   cardText="Javascript"
                   image={"https://picsum.photos/id/237/200/200"}
-                  to="fog/javascript"
+                  to="fog/frontend/javascript"
                 />
               </div>
             </div>

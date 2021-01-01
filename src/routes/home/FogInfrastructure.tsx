@@ -6,15 +6,10 @@ import { Text } from "../../components/Text";
 
 const { useEffect, useContext } = React;
 
-interface Props {
-  scrollToTop: () => void;
-}
+interface Props {}
 
-export const FogInfrastructure: React.FC<Props> = ({ scrollToTop }) => {
+export const FogInfrastructure: React.FC<Props> = () => {
   const color = useContext(ColorContext);
-  useEffect(() => {
-    scrollToTop();
-  }, [scrollToTop]);
 
   return (
     <div>
@@ -22,7 +17,9 @@ export const FogInfrastructure: React.FC<Props> = ({ scrollToTop }) => {
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Fog infrastructure" />
           <Header size="h3" title="Infrastructure section" />
-          <Text text={["Some text about the infrastructure"]} />
+          <div className="textfield">
+            <Text text={["Some text about the infrastructure"]} />
+          </div>
         </div>
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Infrastructure sections" />

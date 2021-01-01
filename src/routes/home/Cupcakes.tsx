@@ -20,20 +20,26 @@ export const Cupcakes: React.FC<Props> = () => {
             size="h4"
             title="Created with a java backend, using tomcat + .jsp and java webservlets"
           />
-          <Text
-            text={[
-              "This was our first project in web development, we learned a lot about the fundementals, such as post redirect get.",
-              "We were given the task of creating a website which, would make it possible for users, to put as many cupcakes they want into a basket.",
-              "They would then be able to pay for it (using fake money, given to the user by an admin).",
-            ]}
-          />
-          <Link
-            to={{ pathname: "https://github.com/CphTobias/Cupcake-Resterende" }}
-            target="_blank"
-            className={"website-link-" + color}
-          >
-            Project github repository
-          </Link>
+          <div className="textfield">
+            <Text
+              text={[
+                "This was our first project in web development, we learned a lot about the fundementals, such as post redirect get.",
+                "We were given the task of creating a website which, would make it possible for users, to put as many cupcakes they want into a basket.",
+                "They would then be able to pay for it (using fake money, given to the user by an admin).",
+              ]}
+            />
+          </div>
+          <div style={{ marginLeft: "10px" }}>
+            <Link
+              to={{
+                pathname: "https://github.com/CphTobias/Cupcake-Resterende",
+              }}
+              target="_blank"
+              className={"website-link-" + color}
+            >
+              Project github repository
+            </Link>
+          </div>
         </div>
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Learn more" />

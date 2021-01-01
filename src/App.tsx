@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Styles.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Home } from "./routes/Home";
@@ -13,22 +13,34 @@ import { FogApi } from "./routes/home/FogApi";
 import { ColorContext } from "./globalstates/ColorContext";
 import { FogInfrastructure } from "./routes/home/FogInfrastructure";
 import { FogFrontEnd } from "./routes/home/FogFrontEnd";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const App: React.FC = () => {
-  const [color, setColor] = useState<string>("yellow");
+  const [color, setColor] = useState<string>(
+    () => localStorage.getItem("color") || "yellow"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("color", color);
+
+    if (color === "yellow") {
+      document.body.style.background =
+        "linear-gradient(90deg, rgba(217,198,112,1) 0%, rgba(255,223,0,1) 41%, rgba(204,185,99,1) 100%)";
+    } else if (color === "white") {
+      document.body.style.background =
+        "linear-gradient(90deg, rgb(80, 80, 80) 0%, rgb(40, 40, 40) 41%, rgb(80, 80, 80) 100%)";
+    }
+  }, [color]);
 
   const handleColorPick = (newcolor: string) => {
     setColor(newcolor);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
   };
 
   return (
     <>
       <BrowserRouter>
         <ColorContext.Provider value={color}>
+          <ScrollToTop />
           <Switch>
             <Route
               path="/"
@@ -73,7 +85,7 @@ export const App: React.FC = () => {
                         <CurrentDirLinks links={["", "fog", "fog/api"]} />
                       }
                     />
-                    <FogApi scrollToTop={scrollToTop} />
+                    <FogApi />
                   </div>
                 </div>
               )}
@@ -92,7 +104,7 @@ export const App: React.FC = () => {
                       />
                     }
                   />
-                  <FogInfrastructure scrollToTop={scrollToTop} />
+                  <FogInfrastructure />
                 </div>
               )}
             />
@@ -108,7 +120,7 @@ export const App: React.FC = () => {
                       <CurrentDirLinks links={["", "fog", "fog/frontend"]} />
                     }
                   />
-                  <FogFrontEnd scrollToTop={scrollToTop} />
+                  <FogFrontEnd />
                 </div>
               )}
             />

@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "PT Serif", serif;
   font-weight: 400;
 }
 
@@ -31,15 +31,21 @@ ul {
 }
 
 .text-color-white {
+  font-size: 21px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #292929;
 }
 
 .text-color-yellow {
+  font-size: 21px;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: #ae5c5c;
+  color: #7c4f4f;
+}
+
+.textfield {
+  padding: 10px;
 }
 
 .w-25 {

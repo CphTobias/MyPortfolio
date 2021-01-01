@@ -19,20 +19,24 @@ export const Fog: React.FC<Props> = () => {
             size="h4"
             title="Created with a java backend, using tomcat + .jsp and java webservlets"
           />
-          <Text
-            text={[
-              "This project was done in about 4-5 weeks i believe.",
-              "The project was about creating a sort of clone of a company called Fog. They used to have or maybe still has, a very outdated system.",
-              "The idea was, to make a website with that could handle a lot of carport requests, which would be helt in a database. The system should be able to compleately handle everything that happens from, when a customer orders a carport, to when it has been bought.",
-            ]}
-          />
-          <Link
-            to={{ pathname: "https://github.com/Jonasmik/Fog-TheGurus" }}
-            target="_blank"
-            className={"website-link-" + color}
-          >
-            Project github repository
-          </Link>
+          <div className="textfield">
+            <Text
+              text={[
+                "This project was done in about 4-5 weeks i believe.",
+                "The project was about creating a sort of clone of a company called Fog. They used to have or maybe still has, a very outdated system.",
+                "The idea was, to make a website with that could handle a lot of carport requests, which would be helt in a database. The system should be able to compleately handle everything that happens from, when a customer orders a carport, to when it has been bought.",
+              ]}
+            />
+          </div>
+          <div style={{ paddingLeft: "10px" }}>
+            <Link
+              to={{ pathname: "https://github.com/Jonasmik/Fog-TheGurus" }}
+              target="_blank"
+              className={"website-link-" + color}
+            >
+              Project github repository
+            </Link>
+          </div>
         </div>
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Learn more" />

@@ -4,17 +4,12 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-const { useEffect, useContext } = React;
+const { useContext } = React;
 
-interface Props {
-  scrollToTop: () => void;
-}
+interface Props {}
 
-export const FogApi: React.FC<Props> = ({ scrollToTop }) => {
+export const FogApi: React.FC<Props> = () => {
   const color = useContext(ColorContext);
-  useEffect(() => {
-    scrollToTop();
-  }, [scrollToTop]);
 
   return (
     <div>
@@ -22,7 +17,9 @@ export const FogApi: React.FC<Props> = ({ scrollToTop }) => {
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Fog api" />
           <Header size="h3" title="Api section" />
-          <Text text={["Some text about the api"]} />
+          <div className="textfield">
+            <Text text={["Some text about the api"]} />
+          </div>
         </div>
         <div className={`shadow-container-${color}`}>
           <Header size="h1" title="Api sections" />
