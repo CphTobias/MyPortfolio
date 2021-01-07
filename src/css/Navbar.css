@@ -19,6 +19,7 @@
 .navbar-li {
   display: flex;
   float: right;
+  font-family: "PT Sans" sans-serif;
 }
 
 .navbar-link-yellow {
@@ -26,8 +27,8 @@
   text-decoration: none;
   font-size: 24px;
   font-weight: 700;
-  font-family: "PT Sans" sans-serif;
   color: #ae5c5c;
+  transition: 400ms;
 }
 
 .navbar-link-white {
@@ -35,8 +36,18 @@
   text-decoration: none;
   font-size: 24px;
   font-weight: 700;
-  font-family: "PT Sans" sans-serif;
   color: #292929;
+  transition: 400ms;
+}
+
+.navbar-link-yellow:hover {
+  border-bottom: 5px solid #282c34;
+  transition: 400ms;
+}
+
+.navbar-link-white:hover {
+  border-bottom: 5px solid #282c34;
+  transition: 400ms;
 }
 
 .navbar-mobilelinks-ul {
@@ -50,19 +61,31 @@
   font-size: 25px;
   text-decoration: none;
   color: #292929;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .navbar-mobile-link-white {
   text-decoration: none;
   font-size: 40px;
+  font-weight: 700;
   color: #292929;
 }
 
 .navbar-mobile-link-yellow {
   text-decoration: none;
+  font-weight: 700;
   font-size: 40px;
   color: #ae5c5c;
+}
+
+.navbar-mobile-link-yellow:hover {
+  border-bottom: 5px solid #282c34;
+  transition: 400ms;
+}
+
+.navbar-mobile-link-white:hover {
+  border-bottom: 5px solid #282c34;
+  transition: 400ms;
 }
 
 .navbar-fullscreenmobile-white {

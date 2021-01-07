@@ -4,7 +4,7 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 
-const { useEffect, useContext } = React;
+const { useContext } = React;
 
 interface Props {}
 

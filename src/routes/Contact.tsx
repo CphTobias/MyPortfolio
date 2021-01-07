@@ -9,14 +9,16 @@ export const Contact: React.FC<Props> = () => {
   const color = useContext(ColorContext);
   return (
     <div>
-      <main className="container">
-        <div className={`shadow-container-${color}`}>
-          <Header size="h1" title="Contact" />
-          <Header
-            size="h5"
-            title="I will always try to respond quickly to your message"
-          />
-          <ContactForm color={color} />
+      <main className="mycontainer">
+        <div className="grid">
+          <div className={`shadow-container-${color} contact-grid`}>
+            <Header size="h1" title="Contact" />
+            <Header
+              size="h5"
+              title="I will always try to respond quickly to your message"
+            />
+            <ContactForm color={color} />
+          </div>
         </div>
       </main>
     </div>

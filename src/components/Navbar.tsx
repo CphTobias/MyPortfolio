@@ -6,9 +6,30 @@ import { ColorContext } from "../globalstates/ColorContext";
 interface Props {}
 
 export const Navbar: React.FC<Props> = () => {
+  let initialLinks = {
+    home: "active",
+    about: "",
+    contact: "",
+  };
+
+  const history = useHistory();
+
+  if (history.location.pathname.includes("contact")) {
+    initialLinks = {
+      home: "",
+      about: "",
+      contact: "active",
+    };
+  } else if (history.location.pathname.includes("about")) {
+    initialLinks = {
+      home: "",
+      about: "active",
+      contact: "",
+    };
+  }
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [showMobileLinks, setShowMobileLinks] = useState(false);
-  const history = useHistory();
+  const [activeLink, setActiveLink] = useState(initialLinks);
   const color = useContext(ColorContext);
 
   const handleMobileLinks = () => {
@@ -38,8 +59,13 @@ export const Navbar: React.FC<Props> = () => {
               <ul className={"navbar-mobilelinks-ul"}>
                 <li>
                   <Link
-                    onClick={handleMobileLinks}
-                    className={"navbar-mobile-link-" + color}
+                    onClick={() => {
+                      setActiveLink({ home: "active", about: "", contact: "" });
+                      handleMobileLinks();
+                    }}
+                    className={
+                      "navbar-mobile-link-" + color + " " + activeLink.home
+                    }
                     to="/"
                   >
                     Home
@@ -47,8 +73,13 @@ export const Navbar: React.FC<Props> = () => {
                 </li>
                 <li>
                   <Link
-                    onClick={handleMobileLinks}
-                    className={"navbar-mobile-link-" + color}
+                    onClick={() => {
+                      setActiveLink({ home: "", about: "active", contact: "" });
+                      handleMobileLinks();
+                    }}
+                    className={
+                      "navbar-mobile-link-" + color + " " + activeLink.about
+                    }
                     to="/about"
                   >
                     About
@@ -56,8 +87,13 @@ export const Navbar: React.FC<Props> = () => {
                 </li>
                 <li>
                   <Link
-                    onClick={handleMobileLinks}
-                    className={"navbar-mobile-link-" + color}
+                    onClick={() => {
+                      setActiveLink({ home: "", about: "", contact: "active" });
+                      handleMobileLinks();
+                    }}
+                    className={
+                      "navbar-mobile-link-" + color + " " + activeLink.contact
+                    }
                     to="/contact"
                   >
                     Contact
@@ -72,7 +108,7 @@ export const Navbar: React.FC<Props> = () => {
       return (
         <div className="container">
           <div className="row">
-            <div className="col-10">
+            <div className="col-11">
               <ul>
                 <li>
                   <i
@@ -81,13 +117,19 @@ export const Navbar: React.FC<Props> = () => {
                     }}
                     className="fas fa-file-contract fa-2x pointer"
                   ></i>
-                  <Link className="navbar-mainlink" to={"/"}>
+                  <Link
+                    className="navbar-mainlink"
+                    onClick={() => {
+                      setActiveLink({ home: "active", about: "", contact: "" });
+                    }}
+                    to={"/"}
+                  >
                     Tobias Zimmermann
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="col-2">
+            <div className="col-1">
               <div className="navbar-mobilecontainer">
                 <i
                   onClick={handleMobileLinks}
@@ -119,7 +161,13 @@ export const Navbar: React.FC<Props> = () => {
                     }}
                     className="fas fa-file-contract fa-2x pointer"
                   ></i>
-                  <Link className="navbar-mainlink" to={"/"}>
+                  <Link
+                    className="navbar-mainlink"
+                    onClick={() => {
+                      setActiveLink({ home: "active", about: "", contact: "" });
+                    }}
+                    to={"/"}
+                  >
                     Tobias Zimmermann
                   </Link>
                 </li>
@@ -128,17 +176,37 @@ export const Navbar: React.FC<Props> = () => {
             <div className="col-md-6">
               <ul className={"navbar-li"}>
                 <li>
-                  <Link to="/" className={"navbar-link-" + color}>
+                  <Link
+                    to="/"
+                    className={"navbar-link-" + color + " " + activeLink.home}
+                    onClick={() => {
+                      setActiveLink({ home: "active", about: "", contact: "" });
+                    }}
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className={"navbar-link-" + color}>
+                  <Link
+                    to="/about"
+                    className={"navbar-link-" + color + " " + activeLink.about}
+                    onClick={() => {
+                      setActiveLink({ home: "", about: "active", contact: "" });
+                    }}
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className={"navbar-link-" + color}>
+                  <Link
+                    to="/contact"
+                    className={
+                      "navbar-link-" + color + " " + activeLink.contact
+                    }
+                    onClick={() => {
+                      setActiveLink({ home: "", about: "", contact: "active" });
+                    }}
+                  >
                     Contact
                   </Link>
                 </li>

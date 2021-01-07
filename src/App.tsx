@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./css/Styles.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./css/index.min.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { About } from "./routes/About";
 import { Navbar } from "./components/Navbar";
@@ -38,8 +39,9 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <ColorContext.Provider value={color}>
+          <Navbar />
           <ScrollToTop />
           <Switch>
             <Route
@@ -47,7 +49,6 @@ export const App: React.FC = () => {
               exact
               render={() => (
                 <div>
-                  <Navbar />
                   <ColorChooser
                     handleColorPick={handleColorPick}
                     currentDirLinks={<CurrentDirLinks links={[""]} />}
@@ -62,7 +63,6 @@ export const App: React.FC = () => {
               render={() => (
                 <div>
                   <div className="mainContainer">
-                    <Navbar />
                     <ColorChooser
                       handleColorPick={handleColorPick}
                       currentDirLinks={<CurrentDirLinks links={["", "fog"]} />}
@@ -78,7 +78,6 @@ export const App: React.FC = () => {
               render={() => (
                 <div>
                   <div className="mainContainer">
-                    <Navbar />
                     <ColorChooser
                       handleColorPick={handleColorPick}
                       currentDirLinks={
@@ -95,7 +94,6 @@ export const App: React.FC = () => {
               exact
               render={() => (
                 <div>
-                  <Navbar />
                   <ColorChooser
                     handleColorPick={handleColorPick}
                     currentDirLinks={
@@ -113,7 +111,6 @@ export const App: React.FC = () => {
               exact
               render={() => (
                 <div>
-                  <Navbar />
                   <ColorChooser
                     handleColorPick={handleColorPick}
                     currentDirLinks={
@@ -130,7 +127,6 @@ export const App: React.FC = () => {
               render={() => (
                 <div>
                   <div className="mainContainer">
-                    <Navbar />
                     <ColorChooser
                       handleColorPick={handleColorPick}
                       currentDirLinks={
@@ -148,7 +144,6 @@ export const App: React.FC = () => {
               render={() => (
                 <div>
                   <div className="mainContainer">
-                    <Navbar />
                     <ColorChooser
                       handleColorPick={handleColorPick}
                       currentDirLinks={<CurrentDirLinks links={["about"]} />}
@@ -165,7 +160,6 @@ export const App: React.FC = () => {
                 <div>
                   <div className="page-content">
                     <div className="mainContainer">
-                      <Navbar />
                       <ColorChooser
                         handleColorPick={handleColorPick}
                         currentDirLinks={
@@ -181,7 +175,7 @@ export const App: React.FC = () => {
             <Route path="/" render={() => <div>404</div>} />
           </Switch>
         </ColorContext.Provider>
-      </BrowserRouter>
+      </Router>
     </>
   );
 };
