@@ -29,3 +29,10 @@ button .btn,
   color: rgba(59, 40, 34, 0.7);
   transition: 400ms;
 }
+
+.main {
+  padding: 16px 90px;
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}

@@ -17,10 +17,13 @@ export const FogApi: React.FC<Props> = () => {
 
   return (
     <div>
-      <main className="mycontainer ">
+      <main className="info-wrapper">
         <div className="info-grid">
           <section className={`shadow-container-${color} links`}>
             <div className="info-links">
+              <div className={`link-header-${color}`}>
+                <Header size="h2" title="Shortcuts" />
+              </div>
               <ul>
                 <li
                   onClick={() =>
@@ -75,55 +78,73 @@ export const FogApi: React.FC<Props> = () => {
               </ul>
             </div>
           </section>
-          <section
-            ref={apiRef}
-            className={`shadow-container-${color} info-content`}
-          >
-            <div className="col1">
-              <Header size="h1" title="Api" />
-              <Text
-                text={[
-                  "In this section i will tell you about our api.",
-                  "In our api you can find four things. Our facades, factories, api constructor and our settings. If you want to step the each of them, you can always click to go there.",
-                ]}
+          <div className="info-container">
+            <section
+              ref={apiRef}
+              className={`shadow-container-${color} info-content`}
+            >
+              <div className="col1">
+                <Header size="h1" title="Api" />
+                <Text
+                  text={[
+                    "In this section i will tell you about our api.",
+                    "In our api you can find four things. Our facades, factories, api constructor and our settings. If you want to step the each of them, you can always click to go there.",
+                  ]}
+                />
+              </div>
+            </section>
+            <section
+              ref={facadeRef}
+              className={`shadow-container-${color} info-content`}
+            >
+              <div className="col2">
+                <Header size="h2" title="Facades" />
+                <Text text={["These are our facades"]} />
+              </div>
+              <img
+                src="https://picsum.photos/id/237/400/400"
+                alt="awesomeDog"
               />
-            </div>
-          </section>
-          <div
-            ref={facadeRef}
-            className={`shadow-container-${color} info-content`}
-          >
-            <div className="col2">
-              <Header size="h2" title="Facades" />
-            </div>
-          </div>
-          <div
-            ref={factoryRef}
-            className={`shadow-container-${color} info-content`}
-          >
-            <div className="col2">
-              <Header size="h2" title="Factories" />
-            </div>
-          </div>
-          <div
-            ref={constructorRef}
-            className={`shadow-container-${color} info-content`}
-          >
-            <div className="col2">
-              <Header size="h2" title="Constructor" />
-              <Text text={["This is my constructor", "Isn't it nice?!"]} />
-            </div>
-            <img src="https://picsum.photos/id/237/400/400" alt="awesomeDog" />
-          </div>
-          <div
-            ref={settingsRef}
-            className={`shadow-container-${color} info-content`}
-          >
-            <div className="col2">
-              <Header size="h2" title="Settings" />
-              <Text text={["Settings yay!"]} />
-            </div>
-            <img src="https://picsum.photos/id/237/400/400" alt="awesomeDog" />
+            </section>
+            <section
+              ref={factoryRef}
+              className={`shadow-container-${color} info-content`}
+            >
+              <div className="col2">
+                <Header size="h2" title="Factories" />
+                <Text text={["This is a factory"]} />
+              </div>
+              <img
+                src="https://picsum.photos/id/237/400/400"
+                alt="awesomeDog"
+              />
+            </section>
+            <section
+              ref={constructorRef}
+              className={`shadow-container-${color} info-content`}
+            >
+              <div className="col2">
+                <Header size="h2" title="Constructor" />
+                <Text text={["This is my constructor", "Isn't it nice?!"]} />
+              </div>
+              <img
+                src="https://picsum.photos/id/237/400/400"
+                alt="awesomeDog"
+              />
+            </section>
+            <section
+              ref={settingsRef}
+              className={`shadow-container-${color} info-content`}
+            >
+              <div className="col2">
+                <Header size="h2" title="Settings" />
+                <Text text={["Settings yay!"]} />
+              </div>
+              <img
+                src="https://picsum.photos/id/237/400/400"
+                alt="awesomeDog"
+              />
+            </section>
           </div>
         </div>
       </main>

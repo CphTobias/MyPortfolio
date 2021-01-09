@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { ColorContext } from "../globalstates/ColorContext";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
@@ -10,6 +10,7 @@ interface Props {}
 
 export const Home: React.FC<Props> = () => {
   const color = useContext(ColorContext);
+  const myWorkRef = useRef<HTMLInputElement>(null);
 
   return (
     <div>
@@ -27,10 +28,21 @@ export const Home: React.FC<Props> = () => {
                   ]}
                 />
               </div>
+              <Button
+                color={color}
+                text={"My work"}
+                buttonStyle="primary main"
+                onClick={() => {
+                  myWorkRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              />
             </div>
           </div>
         </div>
-        <div className={"shadow-container-" + color}>
+        <Information color={color} />
+        <div ref={myWorkRef} className={"shadow-container-" + color}>
           <Header size="h1" title="Past projects" />
           <div className="row" style={{ marginTop: "25px" }}>
             <div className="col-md-2"></div>
@@ -67,7 +79,6 @@ export const Home: React.FC<Props> = () => {
             </div>
           </div>
         </div>
-        <Information color={color} />
       </main>
     </div>
   );

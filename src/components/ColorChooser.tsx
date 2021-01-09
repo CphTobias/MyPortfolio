@@ -14,7 +14,7 @@ export const ColorChooser: React.FC<Props> = ({
   currentDirLinks,
 }) => {
   const currentColor = useContext(ColorContext);
-  const [newcolor, setNewColor] = useState<string | any>(currentColor);
+  const [newcolor, setNewColor] = useState<string>(currentColor);
 
   const handleClick = (color: string) => {
     handleColorPick(color);

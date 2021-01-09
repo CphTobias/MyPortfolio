@@ -1,9 +1,18 @@
 //Variables
 $yellowText: #7c4f4f;
+$navbarYellowColor: rgba(200, 194, 169, 1);
+$navbarWhiteColor: rgba(169, 169, 169, 1);
+$containerYellowColor: rgba(224, 216, 181, 0.7);
+$containerWhiteColor: rgba(255, 255, 255, 0.8);
 
 .mycontainer {
   margin: auto;
   max-width: 1100px;
+}
+
+.info-wrapper {
+  max-width: 1500px;
+  margin: auto;
 }
 
 .grid {
@@ -32,7 +41,7 @@ $yellowText: #7c4f4f;
 
 //mobile layout
 
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   //backup flexbox
 
   @media (grid: 0) {
@@ -41,32 +50,40 @@ $yellowText: #7c4f4f;
       height: auto;
       width: 100%;
       grid-template-columns: 1fr 4fr;
-      grid-template-rows: repeat(5, 1fr);
 
       .links {
         display: flex;
-        width: 85%;
-        align-content: center;
+        border-right: none;
+        background-color: rgba(150, 147, 147, 0.5);
+        width: 100%;
         flex-direction: column;
         grid-column: 1 / 2;
         grid-row: 1 / -1;
-        padding: 15px;
+        padding: 0;
+        align-items: center;
+        height: auto;
 
         .info-links {
-          position: fixed;
+          width: 100%;
+
+          .link-header-yellow {
+            background-color: $containerYellowColor;
+          }
+
+          .link-header-white {
+            background-color: $containerWhiteColor;
+          }
 
           li {
             text-decoration: none;
             font-weight: 800;
             font-size: 25px;
-            border: 1px solid #333;
             padding: 5px;
-            margin: 5px 0;
-            border-radius: 5px;
+            border-bottom: 1px solid black;
 
             &:hover {
               cursor: pointer;
-              transform: scale(1.1);
+              opacity: 0.6;
             }
           }
 
@@ -81,11 +98,23 @@ $yellowText: #7c4f4f;
         }
       }
 
+      .info-container {
+        grid-column: 2 / 2;
+        height: 100vh;
+        width: 100%;
+        overflow: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
       .info-content {
         display: grid;
         width: 100%;
         height: auto;
-        grid-column: 2 / 2;
 
         grid-template-columns: 1fr 1fr;
 
@@ -95,13 +124,19 @@ $yellowText: #7c4f4f;
 
         .col2 {
           display: flex;
-          justify-content: space-evenly;
+          justify-content: center;
           align-content: center;
           flex-direction: column;
 
           p {
             text-align: center;
           }
+        }
+
+        img {
+          display: flex;
+          justify-self: center;
+          align-self: center;
         }
       }
     }

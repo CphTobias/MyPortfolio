@@ -30,6 +30,10 @@ ul {
   list-style-type: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .text-color-white {
   font-size: 21px;
   padding-top: 5px;
