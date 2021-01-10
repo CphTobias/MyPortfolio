@@ -54,7 +54,7 @@ export const Fog: React.FC<Props> = () => {
                 <Card
                   altId="api"
                   cardText="API"
-                  image={"https://picsum.photos/id/237/200/200"}
+                  image={process.env.PUBLIC_URL + "/images/fog/ApiPicture.webp"}
                   to="fog/api"
                 />
               </div>
@@ -62,7 +62,10 @@ export const Fog: React.FC<Props> = () => {
                 <Card
                   altId="Infrastructure"
                   cardText="Infrastructure"
-                  image={"https://picsum.photos/id/237/200/200"}
+                  image={
+                    process.env.PUBLIC_URL +
+                    "/images/fog/InfrastructorPicture.jpg"
+                  }
                   to="fog/infrastructure"
                 />
               </div>
@@ -70,7 +73,9 @@ export const Fog: React.FC<Props> = () => {
                 <Card
                   altId="FrontEnd"
                   cardText="Front end"
-                  image={"https://picsum.photos/id/237/200/200"}
+                  image={
+                    process.env.PUBLIC_URL + "/images/fog/FrontendPicture.webp"
+                  }
                   to="fog/frontend"
                 />
               </div>

@@ -17,14 +17,13 @@ export const Home: React.FC<Props> = () => {
       <main className="container">
         <div className={`shadow-container-${color}`}>
           <div className="row">
-            <div className="col-md-12">
-              <Header size="h1" title="Introduction" />
+            <div className="col-md-6 flex-center">
+              <Header size="h1" title="Hi, I'm Tobias!" />
               <div className="textfield">
                 <Text
                   text={[
-                    "Hi, I'm Tobias.",
-                    "In this portfolio, you will be able to find my past projects, with explenations of how they work.",
-                    "You will also be able find a list of everything i have experience with, when it comes to Computer Science",
+                    "In this portfolio, you will be able to find my past projects, with explanations of how they work.",
+                    "You will also be able find a list of everything i have experience with, when it comes to programming.",
                   ]}
                 />
               </div>
@@ -37,6 +36,17 @@ export const Home: React.FC<Props> = () => {
                     behavior: "smooth",
                   });
                 }}
+              />
+            </div>
+            <div className="col-md-6">
+              <img
+                style={{
+                  opacity: "0.6",
+                  border: "1px solid #333",
+                  borderRadius: "5px",
+                }}
+                src={process.env.PUBLIC_URL + "/images/RoadStart.webp"}
+                alt="My profile"
               />
             </div>
           </div>

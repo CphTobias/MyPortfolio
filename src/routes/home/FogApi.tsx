@@ -99,11 +99,19 @@ export const FogApi: React.FC<Props> = () => {
             >
               <div className="col2">
                 <Header size="h2" title="Facades" />
-                <Text text={["These are our facades"]} />
+                <Text
+                  text={[
+                    "Our facades are to as a middleman, for calling our repositories.",
+                    "These repositories are interfaces, which are implemented inside our infrastructure.",
+                    "This is done because we want the class to first of all know nothing about the overall program, but also so that it only has a single purpose.",
+                    "Our facades each has a getInstance method, which through using a singleton pattern will always have one instance. This is usefull when creating our api in the ICommand",
+                  ]}
+                />
               </div>
               <img
-                src="https://picsum.photos/id/237/400/400"
-                alt="awesomeDog"
+                className="info-pic"
+                src={process.env.PUBLIC_URL + "/images/fog/api/Facade.png"}
+                alt="Facade"
               />
             </section>
             <section
@@ -112,11 +120,18 @@ export const FogApi: React.FC<Props> = () => {
             >
               <div className="col2">
                 <Header size="h2" title="Factories" />
-                <Text text={["This is a factory"]} />
+                <Text
+                  text={[
+                    "Our factories are used as a way, to validate input before commiting.",
+                    "This is done through having setters and getters, some of which parsing strings, into integers.",
+                    "After settings all of the properties inside our factory, we can use this isValid method. It will then return false, if any of parameters are not set, or incorrectly set",
+                  ]}
+                />
               </div>
               <img
-                src="https://picsum.photos/id/237/400/400"
-                alt="awesomeDog"
+                className="info-pic"
+                src={process.env.PUBLIC_URL + "/images/fog/api/Factory.png"}
+                alt="Factory"
               />
             </section>
             <section
@@ -125,11 +140,17 @@ export const FogApi: React.FC<Props> = () => {
             >
               <div className="col2">
                 <Header size="h2" title="Constructor" />
-                <Text text={["This is my constructor", "Isn't it nice?!"]} />
+                <Text
+                  text={[
+                    "Our api constructor, is there to be created by the ICommand.",
+                    "It allows all of our commands to call api.getFACADENAME.method",
+                  ]}
+                />
               </div>
               <img
-                src="https://picsum.photos/id/237/400/400"
-                alt="awesomeDog"
+                className="info-pic"
+                src={process.env.PUBLIC_URL + "/images/fog/api/Constructor.png"}
+                alt="Constructor"
               />
             </section>
             <section
@@ -138,11 +159,19 @@ export const FogApi: React.FC<Props> = () => {
             >
               <div className="col2">
                 <Header size="h2" title="Settings" />
-                <Text text={["Settings yay!"]} />
+                <Text
+                  text={[
+                    "The settings part is used for easy access to changing values. In this example we are generating all of the widths and lengths that our carpots can have.",
+                    "This is useful, because at any point in time we can just change one value, if we suddendly don't have these lengths anymore.",
+                  ]}
+                />
               </div>
               <img
-                src="https://picsum.photos/id/237/400/400"
-                alt="awesomeDog"
+                className="info-pic"
+                src={
+                  process.env.PUBLIC_URL + "/images/fog/api/CarportSettings.png"
+                }
+                alt="Settings"
               />
             </section>
           </div>
